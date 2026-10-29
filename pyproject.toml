@@ -1,0 +1,39 @@
+[build-system]
+requires = ["setuptools>=64"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "scholar-access"
+version = "1.0.0"
+description = "把校园网/学校的 DoH（DNS over HTTPS）通道包装成本地地址，让任何浏览器都能直接填"
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+authors = [{ name = "scholar-access contributors" }]
+keywords = ["dns", "doh", "dns-over-https", "proxy", "campus-network", "chrome", "firefox"]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Environment :: Console",
+  "Intended Audience :: End Users/Desktop",
+  "License :: OSI Approved :: MIT License",
+  "Operating System :: Microsoft :: Windows",
+  "Operating System :: MacOS",
+  "Operating System :: POSIX :: Linux",
+  "Programming Language :: Python :: 3",
+  "Topic :: Internet :: Name Service (DNS)",
+  "Topic :: System :: Networking",
+]
+dependencies = []
+
+[project.urls]
+Homepage = "https://github.com/SMFDrummer/scholar-access"
+Issues = "https://github.com/SMFDrummer/scholar-access/issues"
+
+[project.scripts]
+scholar-access = "scholar_access.cli:main"
+
+[tool.setuptools]
+packages = ["scholar_access"]
+
+[tool.setuptools.package-data]
+scholar_access = ["py.typed"]
