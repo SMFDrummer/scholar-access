@@ -9,6 +9,10 @@
 ![License](https://img.shields.io/badge/license-MIT-green)
 ![Dependencies](https://img.shields.io/badge/dependencies-0-success)
 
+#### 本项目完全由 Deepseek V4.1 Flash 完成，有任何问题请提交 issue，可用性请自测，仅确保 NUC （中北大学）可用
+#### 使用前请确保您已连接校园网，并且校网络安全与服务中心已开通访问权限
+#### 本项目仅作学习交流使用，请勿用于非法用途
+
 ---
 
 ## 这是什么
