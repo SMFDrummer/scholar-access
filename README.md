@@ -42,6 +42,10 @@
 
 零第三方依赖：证书、DNS 报文、HTTP 服务全部用 Python 标准库实现，**装完就能跑，不用联网装包**。
 
+> 实测环境：Windows 10 + Helium 156 / Chrome 系（**不添加任何启动参数**）+ 校园网 DoH，Google、GitHub、Wikipedia、YouTube 正常打开，国内站点不受影响。
+
+![填完本地 DoH 地址后直接打开 Google，没有任何额外的启动参数](docs/screenshot.png)
+
 ---
 
 ## 快速开始
@@ -323,6 +327,9 @@ scholar_access/
 ```
 
 欢迎 PR：域名规则表（强制走某条腿）、DoT/DoQ 上游、Windows 服务模式、GUI 小托盘。
+
+> 校园网里 `git push` 可能连不上 github.com。如果你本机有代理（如 Clash 的 `127.0.0.1:7897`），用
+> `git -c http.proxy=http://127.0.0.1:7897 push` 即可；也可以用浏览器打开 GitHub 网页上传文件。
 
 ## 许可
 
