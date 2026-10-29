@@ -13,8 +13,18 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [windows-latest, ubuntu-latest, macos-latest]
-        python: ["3.9", "3.12", "3.13"]
+        # 显式列出来：ubuntu-latest 已升级到 26.04，官方没有 Python 3.9 的构建，
+        # 所以老版本留在 ubuntu-22.04 上跑，新版本用 24.04。
+        include:
+          - { os: windows-latest, python: "3.9" }
+          - { os: windows-latest, python: "3.12" }
+          - { os: windows-latest, python: "3.13" }
+          - { os: ubuntu-22.04, python: "3.9" }
+          - { os: ubuntu-24.04, python: "3.12" }
+          - { os: ubuntu-24.04, python: "3.13" }
+          - { os: macos-latest, python: "3.9" }
+          - { os: macos-latest, python: "3.12" }
+          - { os: macos-latest, python: "3.13" }
 
     steps:
       - uses: actions/checkout@v4
@@ -35,7 +45,7 @@ jobs:
           python -m scholar_access --help
 
       - name: Build wheel
-        if: matrix.os == 'ubuntu-latest' && matrix.python == '3.12'
+        if: matrix.os == 'ubuntu-24.04' && matrix.python == '3.12'
         run: |
           python -m pip install --upgrade pip build
           python -m build
